@@ -4,18 +4,18 @@ import org.week2jd14.generators.GraphGenerator;
 import org.week2jd14.utils.Timing;
 
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class StateSpaceSearch {
-    private int[][] graph;
-    private int numNodes;
+    private final int[][] graph;
+    private final int numNodes;
 
-    // Se crea la representación del Grafo con la Matriz de Adjacencia
     public StateSpaceSearch(int[][] adjacencyMatrix) {
         this.graph = adjacencyMatrix;
         this.numNodes = adjacencyMatrix.length;
     }
 
-    // Estrategia de búsqueda, en este caso BFS
     public List<Integer> breadthFirstSearch(int startNode, int goalNode) {
         Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[numNodes];
@@ -30,7 +30,7 @@ public class StateSpaceSearch {
 
             if (currentNode == goalNode) {
                 // Reconstruct and return the path
-                return reconstructPath(parent, startNode, goalNode);
+                return reconstructPath(parent, goalNode);
             }
 
             for (int neighbor = 0; neighbor < numNodes; neighbor++) {
@@ -46,7 +46,7 @@ public class StateSpaceSearch {
         return new ArrayList<>();
     }
 
-    private List<Integer> reconstructPath(int[] parent, int startNode, int goalNode) {
+    private List<Integer> reconstructPath(int[] parent, int goalNode) {
         List<Integer> path = new ArrayList<>();
         int currentNode = goalNode;
 
@@ -60,13 +60,7 @@ public class StateSpaceSearch {
     }
 
     public static void main(String[] args) {
-        /* int[][] adjacencyMatrix = {
-                {0, 1, 0, 0, 1},
-                {1, 0, 1, 0, 0},
-                {0, 1, 0, 1, 0},
-                {0, 0, 1, 0, 1},
-                {1, 0, 0, 1, 0}
-        };*/
+        Logger logger = Logger.getLogger(StateSpaceSearch.class.getName());
         Timing timer = new Timing();
         GraphGenerator gg = new GraphGenerator();
         int[][] adjacencyMatrix = gg.getAdjacencyMatrix();
@@ -78,11 +72,15 @@ public class StateSpaceSearch {
 
         List<Integer> path = search.breadthFirstSearch(startNode, goalNode);
 
+        String finalTiming = timer.stop();
+
         if (!path.isEmpty()) {
-            System.out.println("Shortest Path from Node " + startNode + " to Node " + goalNode + ": " + path);
+            String pathFound = String.format("Shortest Path from Node %s to Node %s: %s", startNode, goalNode, path);
+            logger.log(Level.INFO, pathFound);
         } else {
-            System.out.println("No path found from Node " + startNode + " to Node " + goalNode);
+            String pathNotFound = String.format("No path found from Node %s to Node %s", startNode, goalNode);
+            logger.log(Level.INFO, pathNotFound);
         }
-        System.out.println(timer.stop());
+        logger.log(Level.INFO, finalTiming);
     }
 }
