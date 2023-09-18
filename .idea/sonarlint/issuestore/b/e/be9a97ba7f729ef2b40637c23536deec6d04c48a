@@ -1,0 +1,18 @@
+
+j
+java:S2095d"HUse try-with-resources or close this "FileWriter" in a "finally" clause.(§ø‹ñÿÿÿÿÿ8ûØ³§ª1
+`
+java:S1117"CRename "adjacencyMatrix" which hides the field declared at line 16.(ùÛ†¥8ıØ³§ª1
+:
+java:S2119"Save and re-use this "Random".(¼İÅf8şØ³§ª1
+G	java:S1068"+Replace this use of System.out by a logger.(‘Ì8ÿØ³§ª1
+L	java:S1069"+Replace this use of System.out by a logger.(®¾îùÿÿÿÿ8ÿØ³§ª1
+c
+java:S1117>"ARename "adjacencyList" which hides the field declared at line 17.(‹ïŒ³şÿÿÿÿ8ÿØ³§ª1
+L	java:S106N"+Replace this use of System.out by a logger.(«÷Çõÿÿÿÿÿ8€Ù³§ª1
+G	java:S106P"+Replace this use of System.out by a logger.(ÅàìÄ8€Ù³§ª1
+L	java:S106S"+Replace this use of System.out by a logger.(ª¿é’øÿÿÿÿ8€Ù³§ª1
+L	java:S106U"+Replace this use of System.out by a logger.(Ø–ªùÿÿÿÿ8€Ù³§ª1
+L	java:S106X"+Replace this use of System.out by a logger.(ªÓ¼áşÿÿÿÿ8€Ù³§ª1
+G	java:S106h"+Replace this use of System.out by a logger.(­İùŸ8‚Ù³§ª1
+H	java:S106ˆ"+Replace this use of System.out by a logger.(­İùŸ8„Ù³§ª1
