@@ -1,5 +1,0 @@
-
-j
-java:S2095."HUse try-with-resources or close this "FileWriter" in a "finally" clause.(§ø‹ñÿÿÿÿÿ8Åª„¤ª1
-G	java:S1064"+Replace this use of System.out by a logger.(­ÝùŸ8Êª„¤ª1
-G	java:S106G"+Replace this use of System.out by a logger.(­ÝùŸ8Ìª„¤ª1
